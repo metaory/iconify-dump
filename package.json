@@ -1,0 +1,17 @@
+{
+  "name": "iconify-dump",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare:icons": "node scripts/copy-icons.js",
+    "dev": "npm run prepare:icons && vite",
+    "build": "npm run prepare:icons && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^6.3.5",
+    "@iconify/json": "~2.2.347"
+  }
+}

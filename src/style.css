@@ -1,0 +1,212 @@
+:root {
+  --color-bg: #110022;
+  --color-bg-card: #220033;
+  --color-bg-card-hover: #220044;
+  --color-accent: #5500FF;
+  --color-muted: #440066;
+
+  font-family: system-ui, sans-serif;
+  color-scheme: dark;
+
+  background: var(--color-bg);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--color-accent);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#app {
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.collection-card {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  width: 120px;
+  height: 120px;
+  padding: 0.75rem;
+  transition: transform 0.2s, background 0.2s;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  box-sizing: border-box;
+  position: relative;
+  filter: saturate(0.8);
+}
+
+.collection-card:hover {
+  transform: translateY(-4px);
+  background: var(--color-bg-card-hover);
+  filter: saturate(1);
+}
+
+.collection-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.count {
+  position: absolute;
+  left: 50%;
+  bottom: 0.5rem;
+  transform: translateX(-50%);
+  color: var(--color-muted);
+  font-size: 1rem;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.icon-card {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  min-height: 0;
+  transition: transform 0.2s, background 0.2s;
+  padding: 0.5rem;
+}
+
+.icon-card:hover {
+  transform: translateY(-2px);
+  background: var(--color-bg-card-hover);
+}
+
+.icon-preview {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-name {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  text-align: center;
+  word-break: break-all;
+  margin-top: 0.5rem;
+}
+
+.error {
+  padding: 2rem;
+  text-align: center;
+}
+
+.icon-filter {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 10;
+  background: rgba(20,10,40,0.5);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 24px 0 rgba(40,0,80,0.18);
+  border: none;
+  outline: none;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.25rem;
+  color: var(--color-accent);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.icon-filter:focus {
+  box-shadow: 0 6px 32px 0 rgba(80,0,160,0.22);
+  background: rgba(40,20,60,0.7);
+}
+
+.back-link {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 20;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20,10,40,0.3);
+  border-radius: 50%;
+  box-shadow: 0 4px 24px 0 rgba(40,0,80,0.10);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.back-link:hover {
+  background: rgba(40,20,60,0.5);
+}
+.back-link .icon-svg {
+  width: 96px;
+  height: 96px;
+  stroke: #fff;
+  stroke-width: 3;
+  fill: none;
+  display: block;
+}
+
+.toast {
+  position: fixed;
+  top: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(40,20,60,0.85);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.7em 1.5em;
+  border-radius: 1.5em;
+  box-shadow: 0 4px 24px 0 rgba(40,0,80,0.18);
+  z-index: 9999;
+  font-size: 1.1em;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.03em;
+}
